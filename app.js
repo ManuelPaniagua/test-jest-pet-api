@@ -39,7 +39,7 @@ app.use('/pets', petRoutes)
 
 /* Server setup */
 if (process.env.NODE_ENV !== 'test') {
-    app.listen(port, () => console.log(`⚡️[server]: Server is running at https://localhost:${port}`))
+    app.listen(port, () => console.log(`⚡️[server]: Server is running at http://localhost:${port}`))
 }
 
 export default app
