@@ -1,1 +1,3 @@
 node_modules
+/front-end-app/node_modules
+**/node_modules
