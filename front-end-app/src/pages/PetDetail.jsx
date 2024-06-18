@@ -24,12 +24,12 @@ function PetDetail({ setPetToEdit }) {
                 setPet(response.data)
                 setPetToEdit(response.data)
             }
-            
+
         } catch (error) {
             console.error('error', error)
         }
     }
-  
+
     useEffect(() => { getPet() }, [])
 
     const deletePet = async () => {
@@ -38,7 +38,7 @@ function PetDetail({ setPetToEdit }) {
             // const response = await fetch(`http://localhost:3000/pets/${petId}`, {
             //     method: 'DELETE'
             // })
-            
+
             /* AXIOS */
             const response = await axios.delete(`http://localhost:3000/pets/${petId}`)
 
@@ -60,7 +60,7 @@ function PetDetail({ setPetToEdit }) {
                     <p>Pet breed: {pet.breed}</p>
 
                     <div style={{ display: 'flex', justifyContent: 'center', aligniItems: 'center' }}>
-                        
+
                         <Link to={`/${pet?.id}/edit`}>
                             <button style={{ marginRight: 10 }}>Edit pet</button>
                         </Link>

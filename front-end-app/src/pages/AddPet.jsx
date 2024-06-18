@@ -37,7 +37,7 @@ function AddPet() {
                 petData,
                 { headers: { 'Content-Type': 'application/json' } }
             )
-                
+
             if (response.status === 200) window.location.href = `/${response.data.id}`
 
         } catch (error) {
@@ -48,7 +48,7 @@ function AddPet() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', aligniItems: 'center' }}>
             <h2>Add Pet</h2>
-            
+
             <div style={{ display: 'flex', flexDirection: 'column', margin: 20 }}>
                 <label>Pet name</label>
                 <input type='text' value={petName} onChange={e => setPetName(e.target.value)} />
@@ -70,7 +70,8 @@ function AddPet() {
             </div>
 
             <button
-                style={{ marginTop: 30 }}
+                style={{ marginTop: 30 }
+                }
                 onClick={() => addPet()}
             >
                 Add pet

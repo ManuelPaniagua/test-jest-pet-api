@@ -15,12 +15,12 @@ function PetList() {
             /* AXIOS */
             const response = await axios.get('http://localhost:3000/pets')
             if (response.status === 200) setPets(response.data)
-            
+
         } catch (error) {
             console.error('error', error)
         }
     }
-  
+
     useEffect(() => { getPets() }, [])
 
     return (
