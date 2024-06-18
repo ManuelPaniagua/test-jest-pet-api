@@ -33,7 +33,7 @@ function EditPet({ petToEdit }) {
                 petData,
                 { headers: { 'Content-Type': 'application/json' } }
             )
-            
+
             if (response.status === 200) {
                 window.location.href = `/${petToEdit.id}`
             }
@@ -45,7 +45,7 @@ function EditPet({ petToEdit }) {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', aligniItems: 'center' }}>
             <h2>Edit Pet</h2>
-            
+
             <div style={{ display: 'flex', flexDirection: 'column', margin: 20 }}>
                 <label>Pet name</label>
                 <input type='text' value={petName} onChange={e => setPetName(e.target.value)} />
