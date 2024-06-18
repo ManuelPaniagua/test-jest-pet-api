@@ -1,11 +1,11 @@
-import express from "express";
+import express from 'express';
 import {
   listPets,
   getPet,
   editPet,
   addPet,
   deletePet,
-} from "../controllers/pets.controllers.js";
+} from '../controllers/pets.controllers.js';
 
 const router = express.Router();
 
@@ -51,7 +51,7 @@ const router = express.Router();
  *      500:
  *         description: Internal Server Error
  */
-router.get("/", listPets);
+router.get('/', listPets);
 
 /**
  * @swagger
@@ -72,7 +72,7 @@ router.get("/", listPets);
  *      500:
  *         description: Internal Server Error
  */
-router.get("/:id", getPet);
+router.get('/:id', getPet);
 
 /**
  * @swagger
@@ -105,7 +105,7 @@ router.get("/:id", getPet);
  *       description: Internal Server Error
  *
  */
-router.put("/:id", editPet);
+router.put('/:id', editPet);
 
 /**
  * @swagger
@@ -130,7 +130,7 @@ router.put("/:id", editPet);
  *      500:
  *          description: Internal Server Error
  */
-router.post("/", addPet);
+router.post('/', addPet);
 
 /**
  * @swagger
@@ -151,6 +151,6 @@ router.post("/", addPet);
  *     500:
  *       description: Internal Server Error
  */
-router.delete("/:id", deletePet);
+router.delete('/:id', deletePet);
 
 export default router;
