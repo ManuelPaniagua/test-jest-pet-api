@@ -3,6 +3,11 @@ import cors from 'cors';
 import swaggerUI from 'swagger-ui-express';
 import swaggerJSdoc from 'swagger-jsdoc';
 import petRoutes from './pets/routes/pets.routes.js';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const port = 3000;
@@ -34,11 +39,16 @@ app.use(
 );
 
 /* Routes */
-app.use((req, res, next) => {
-  res.status(404).sendFile('index.html', { root: './public' });
+app.get('/', (req, res) => {
+  res.sendFile(join(__dirname, 'public', 'index.html'));
 });
 
 app.use('/pets', petRoutes);
+
+// 404 handler
+app.use((req, res, next) => {
+  res.status(404).sendFile(join(__dirname, 'public', 'index.html'));
+});
 
 /* Server setup */
 if (process.env.NODE_ENV !== 'test') {
