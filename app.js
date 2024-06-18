@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import swaggerUI from 'swagger-ui-express';
 import swaggerJSdoc from 'swagger-jsdoc';
-
 import petRoutes from './pets/routes/pets.routes.js';
 
 const app = express();
@@ -35,6 +34,10 @@ app.use(
 );
 
 /* Routes */
+app.use((req, res, next) => {
+  res.status(404).sendFile('index.html', { root: './public' });
+});
+
 app.use('/pets', petRoutes);
 
 /* Server setup */
